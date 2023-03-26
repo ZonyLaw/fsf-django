@@ -10,18 +10,7 @@
     <h1>To add a todo item</h1>
     <form method="post" action="add">
         {% csrf_token %} <!-- this is ensure the submission is recieved otherwise djsango will throw an error -->
-        <div>
-            <p>
-                <label for="id_name">Name:</label>
-                <input type="text" id="id_name" name="item_name" />
-            </p>
-        </div>
-        <div>
-            <p>
-                <label for="id_done">Done:</label>
-                <input type="checkbox" id="id_done" name="done" />
-            </p>
-        </div>
+        {{ form.as_p }}
         <div>
             <p>
                 <button type="submit">Submit</button>
